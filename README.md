@@ -80,7 +80,7 @@ Open the processing sketch:
 	/lib/processing/dotmap/dotmap.pde
 Set the zoomlevels you want to render in the zoomlevel file:
 	/lib/processing/dotmap/dotmap.pde
-For reference: The top zoom level, showing the entire contiguous 48 US states, is zoom level 4. The highest zoom level is 14.
+For reference: The lowest zoom level, showing the entire contiguous 48 US states, is level 4. The highest zoom level used in @eyedistrict's map is level 14.
 Higher levels seem to take about twice as much time to render as the level below them. Here are the times each level took for me:
 Level 4: 30 minutes
 Level 5: 1 hour
@@ -92,3 +92,5 @@ Level 9: 16 hours
 
 You may view the tiles as they render by opening this page:
 	/dotmap/data/index.html
+	
+When you're done with your virtual machine, be sure to turn it off with "vagrant destroy"
