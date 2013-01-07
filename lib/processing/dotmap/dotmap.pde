@@ -72,7 +72,7 @@ void setup() {
     int level = int(zoomlevels[i]);
 
     println( "loading..." );
-    reader = createReader("people.csv");
+    reader = createReader("../../../data/people.csv");
     try {
       String line;
 
@@ -111,8 +111,8 @@ void setup() {
           if (pg!=null) {
             pg.endDraw();
             PVector gtile = proj.GoogleTile((int)tms_tile.x, (int)tms_tile.y, level);
-						println( "tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
-            pg.save( "tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
+						println( "../../../data/tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
+            pg.save( "../../../data/tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
             println( "done" );
           }
 
@@ -152,16 +152,17 @@ void setup() {
       if (pg!=null) {
         pg.endDraw();
         PVector gtile = proj.GoogleTile((int)tms_tile.x, (int)tms_tile.y, level);
-        pg.save( "tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
-				println( "tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
+        pg.save( "../../../data/tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
+				println( "../../../data/tiles/"+level+"/"+int(gtile.x)+"/"+int(gtile.y)+".png" );
 
-        println( "done" );
+        //println( "done" );
       }
     } 
     catch (IOException e) {
       //e.printStackTrace();
     }
   }
+  println( "Completed!" );
 }
 
 void draw() {

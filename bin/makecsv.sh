@@ -1,3 +1,4 @@
+cd ../data/
 for f in *.db
 do 
 	echo $f
