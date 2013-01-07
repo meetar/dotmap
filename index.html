@@ -2,11 +2,7 @@
 <html>
   <head>
     <title>Census Dotmap</title>
-    <link rel="image_src" href="/dotmap/sample.png" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta name="description" content="This is a map of every person counted by the 2010 US and 2011 Canadian censuses. The map has 341,817,095 dots - one for each person." />
-    <meta name="og:description" content="This is a map of every person counted by the 2010 US and 2011 Canadian censuses. The map has 341,817,095 dots - one for each person." />
-    <meta name="og:image" content="/dotmap/sample.png" />
     <meta name="og:url" content="http://bmander.com/dotmap/index.html" />
     <meta name="og:title" content="Census Dotmap" />
     <style type="text/css">
@@ -26,36 +22,24 @@
 
     </style>
 
-    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM5hCtSjwpVyntcUPCOP1dzheF6JXcx5k&sensor=false">
     </script>
-    <script type="text/javascript">
-
-/*
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37330114-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-*/
-  </script>
+   
   <script type="text/javascript">
 
   var dotTypeOptions = {
     getTileUrl: function(coord, zoom) {
       var ret = "data/tiles/"+zoom+"/"+coord.x+"/"+coord.y+".png";
-      /*if( zoom <= 7 ){
+/*
+	  // left in to show hosted tile references
+	  if( zoom <= 7 ){
        var ret = "https://s3.amazonaws.com/dotmap_tiles/"+zoom+"/"+coord.x+"/"+coord.y+".png";
       } else {
       var ret = "https://s3.amazonaws.com/dotmap_tiles/"+zoom+"/"+coord.x+"/"+coord.y+".png";
         var ret = "http://mt"+((coord.x+coord.y)%4)+".bmander.com/tiles/"+zoom+"/"+coord.x+"/"+coord.y+".png";
       }
-			*/
+*/
       return ret;
 
     },
@@ -165,7 +149,7 @@ function roundToPlace(x,places){
       <div style="padding:5px;font-size:small">
       <span class="button" id="toggle" onclick="toggleLabels();">show labels</span>
       <h1>Census Dotmap</h1>
-			<!--
+<!--
       <span class="button" onclick="window.location.hash='lat='+roundToPlace(map.getCenter().lat(),6)+'&lon='+roundToPlace(map.getCenter().lng(),6)+'&z='+map.getZoom()+'&o='+(labels?'t':'f');return false;">link to this map</span>
       <h1>Census Dotmap</h1>
       <p><a href="http://bmander.com/dotmap/store.html">Buy a print</a></blink>
@@ -183,7 +167,7 @@ function roundToPlace(x,places){
       <p>The census reported that someone lived there.</p>
       <h3>This says someone lives in the middle of a lake.</h3>
       <p>The census reported that someone lives in a block which includes a lake, and that's where their dot was randomly placed. Also, some people live in the middle of lakes.</p>
-			-->
+-->
     </div>
 
     </div>
