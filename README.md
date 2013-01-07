@@ -8,6 +8,8 @@ http://bmander.com/dotmap/methods.html
 
 So I filled in some gaps and collected the files here. Additionally, getting all the python libraries can be tricky sometimes, so this repo includes a virtual machine (VM), which is like a cleanroom work environment in which to run the code.
 
+Massive thanks to <https://github.com/robert-chiniquy/> for his help with this.
+
 the process
 -----------
 US Census data is available down to the level of the "census block" – in cities these often correlate to city blocks, but elsewhere they may be delineated by other features. (More reading: http://en.wikipedia.org/wiki/Census_block)
