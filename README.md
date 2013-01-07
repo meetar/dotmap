@@ -10,15 +10,19 @@ So I filled in some gaps and collected the files here. Additionally, getting all
 
 the process
 -----------
-US Census data is available down to the level of the "census block" – in cities these often correlate to city blocks, but elsewhere they may be delineated by other features.
+US Census data is available down to the level of the "census block" – in cities these often correlate to city blocks, but elsewhere they may be delineated by other features. (More reading: http://en.wikipedia.org/wiki/Census_block)
 
-More reading: http://en.wikipedia.org/wiki/Census_block
+Inside the bin/ directory are some scripts to automate the data-processing.
 
-The makedots.py python script accesses the census data and gets the shape of each block and the number of people recorded as living there. Then it randomly places one dot for each person in the block shape, saving each dot's position as a latitude/longitude pair in a .csv (comma-separated values) file. It makes one .csv file per zip file.
+'makedots.py' accesses the census data and gets the shape of each block and the number of people recorded as living there. Then it randomly places one dot for each person in the block shape, saving each dot's position as a latitude/longitude pair in a sqlite3 .db database file.
 
-The bashsort.sh script file sorts all the .csv files and joins them into one .csv called people.csv.
+'makecsv' converts each .db to a .csv (comma-separated values) file.
 
-The processing sketch
+'bashsort.sh' sorts all the .csv files and joins them into one .csv called people.csv. If you process all 51 states+DC, the resulting file is 17gb.
+
+The processing sketch (lib/Processing/dotmap/dotmap.pde) renders tiled .png files from the .csv.
+
+And lastly, /index.html will display the tiles using Google JavaScript mapping API! You can watch the tiles fill in as they finish rendering if you zoom in and out.
 
 
 requirements
@@ -35,7 +39,7 @@ The Python GDAL bindings (http://pypi.python.org/pypi/GDAL/)
 
 Either way, you'll need:
 Processing (http://processing.org/)
-Lots and lots of memory and drive space if you want to render the whole map, less for only pieces. I only rendered up to the mid-level resolution, and that took 30GB of virtual memory and 30GB of drive space.
+Lots and lots of memory and drive space if you want to render the whole map, less for only pieces. I only rendered up to mid-level resolution, and that took 30GB of virtual memory and 30GB of drive space.
 
 setup
 -----
@@ -80,7 +84,8 @@ Open the processing sketch:
 	/lib/processing/dotmap/dotmap.pde
 Set the zoomlevels you want to render in the zoomlevel file:
 	/lib/processing/dotmap/dotmap.pde
-For reference: The lowest zoom level, showing the entire contiguous 48 US states, is level 4. The highest zoom level used in @eyedistrict's map is level 14.
+Add one level per line, from 4-14. Level 4 is the lowest zoom level, aka satellite view. Level 14 is the highest level, and shows individual neighborhoods.
+
 Higher levels seem to take about twice as much time to render as the level below them. Here are the times each level took for me:
 Level 4: 30 minutes
 Level 5: 1 hour
@@ -91,6 +96,10 @@ Level 9: 16 hours
 ...I stopped there. Following this math, using this method, Level 14 could take 3 weeks. I don't know how he did it.
 
 You may view the tiles as they render by opening this page:
-	/dotmap/data/index.html
+	/index.html
 	
 When you're done with your virtual machine, be sure to turn it off with "vagrant destroy"
+
+Good luck!
+@meetar
+m33tar@gmail.com
