@@ -1,4 +1,4 @@
-gdal-test
+dotmap
 =========
 An attempt to replicate 
 http://bmander.com/dotmap/index.html
