@@ -29,13 +29,13 @@ requirements
 ------------
 
 For the virtual machine way:
-- VirtualBox (https://www.virtualbox.org/)
-- Vagrant (http://www.vagrantup.com/)
+- VirtualBox (<https://www.virtualbox.org/>)
+- Vagrant (<http://www.vagrantup.com/>)
 
 OR - For the manual method:
 - Python 1.5
 - Sqlite3
-- The Python GDAL bindings (http://pypi.python.org/pypi/GDAL/)
+- The Python GDAL bindings (<http://pypi.python.org/pypi/GDAL/>)
 
 Either way, you'll need:
 - Processing (http://processing.org/)
@@ -46,24 +46,25 @@ setup
 
 Install the applications required above, depending on your method of choice.
 
-Clone this repo in the directory of your choice:
-> git clone git://github.com/meetar/dotmap.git
+Clone this repo in the directory of your choice:  
+: `git clone git://github.com/meetar/dotmap.git`  
 A directory called "dotmap" will be created.
 
 For the virtual machine way:
 Go to the dotmap directory
->	`cd dotmap`
+: `cd dotmap`
 Start the VM
-	`vagrant up`
+: `vagrant up`
 ...that takes a few minutes on my machine. Then:
-Connect to the VM with ssh, either with an app like PuTTY or through the command line:
-  ssh 127.0.0.1:8888
-	user: vagrant
-	password: vagrant
-Then change to the shared directory in the virtual machine, which is the same as your project directory:
-  cd /vagrant
 
-For the manual method:
+Connect to the VM with ssh, either with an app like PuTTY or through the command line:
+: `ssh 127.0.0.1:8888`
+: `	user: vagrant`
+: `	password: vagrant`
+Then change to the shared directory in the virtual machine, which is the same as your project directory:
+: `cd /vagrant`
+
+For the manual method:  
 You're on your own.
 
 instructions
@@ -71,18 +72,18 @@ instructions
 A file called "states" has a list of the states and their associated numbers, as according to the US Census zipfiles. By default, only Alabama is uncommented - uncomment any others you'd like to include in your map.
 
 Then, go to the binaries dir:
-    cd bin
+: `cd bin`
 And run makedots:
-    python makedots
+: `python makedots`
 This will ask your permission to do a few things, in sequence:
  - Download and process the data for each state listed in "states", making a lot of .db files
  - Run 'bash makecsv.sh' to extract all the data from the .db files into a lot of .csv files
  - Run 'bash bashsort.sh' to sort all the .csv files and combine them into "people.csv"
 
 Once that's done, open the processing sketch:
-	/lib/processing/dotmap/dotmap.pde
+:	`/lib/processing/dotmap/dotmap.pde`
 Set the zoomlevels you want to render in the zoomlevel file:
-	/lib/processing/dotmap/dotmap.pde
+:	`/lib/processing/dotmap/data/zoomlevel`
 Add one level per line, from 4-14. Level 4 is the lowest zoom level, aka satellite view. Level 14 is the highest level, and shows individual neighborhoods.
 
 Higher levels seem to take about twice as much time to render as the level below them. Here are the times each level took for me:
@@ -95,10 +96,10 @@ Higher levels seem to take about twice as much time to render as the level below
 ...I stopped there. Following this math, using this method, Level 14 could take 3 weeks. I don't know how he did it.
 
 You may view the tiles as they render by opening this page:
-	/index.html
+:	`/index.html`
 	
-When you're done with your virtual machine, be sure to turn it off with "vagrant destroy"
+When you're done with your virtual machine, be sure to turn it off with `vagrant destroy`.
 
-Good luck!
-@meetar
-m33tar@gmail.com
+Good luck!  
+[@meetar  ]http://twitter.com/meetar
+<m33tar@gmail.com>
