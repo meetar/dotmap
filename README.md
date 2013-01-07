@@ -68,31 +68,30 @@ You're on your own.
 
 instructions
 ------------
-A file called "states" has a list of the states and their associated numbers, as according to the US Census zipfiles. Comment out or remove the states you'd like to process.
+A file called "states" has a list of the states and their associated numbers, as according to the US Census zipfiles. By default, only Alabama is uncommented - uncomment any others you'd like to include in your map.
 
 Then, go to the binaries dir:
     cd bin
 And run makedots:
     python makedots
-This will download and process each zipfile listed in "states", making a lot of .db files. Then:
-	bash makecsv.sh
-This will extract all the data from the .db files into a lot of .csv files. Then:
-	bash bashsort.sh
-This will sort all the .csv files and combine them into "people.csv".
+This will ask your permission to do a few things, in sequence:
+ - Download and process the data for each state listed in "states", making a lot of .db files
+ - Run 'bash makecsv.sh' to extract all the data from the .db files into a lot of .csv files
+ - Run 'bash bashsort.sh' to sort all the .csv files and combine them into "people.csv"
 
-Open the processing sketch:
+Once that's done, open the processing sketch:
 	/lib/processing/dotmap/dotmap.pde
 Set the zoomlevels you want to render in the zoomlevel file:
 	/lib/processing/dotmap/dotmap.pde
 Add one level per line, from 4-14. Level 4 is the lowest zoom level, aka satellite view. Level 14 is the highest level, and shows individual neighborhoods.
 
 Higher levels seem to take about twice as much time to render as the level below them. Here are the times each level took for me:
-Level 4: 30 minutes
-Level 5: 1 hour
-Level 6: 2 hour
-Level 7: 4 hour
-Level 8: 8 hours
-Level 9: 16 hours
+ - Level 4: 30 minutes
+ - Level 5: 1 hour
+ - Level 6: 2 hour
+ - Level 7: 4 hour
+ - Level 8: 8 hours
+ - Level 9: 16 hours
 ...I stopped there. Following this math, using this method, Level 14 could take 3 weeks. I don't know how he did it.
 
 You may view the tiles as they render by opening this page:
