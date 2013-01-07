@@ -10,7 +10,7 @@ So I filled in some gaps and collected the files here. Additionally, getting all
 
 the process
 -----------
-US Census data is available down to the level of the "census block" – in cities these often correlate to city blocks, but elsewhere they may be delineated by other features. (More reading: http://en.wikipedia.org/wiki/Census_block)
+US Census data is available down to the level of the "census block" ï¿½ in cities these often correlate to city blocks, but elsewhere they may be delineated by other features. (More reading: http://en.wikipedia.org/wiki/Census_block)
 
 Inside the bin/ directory are some scripts to automate the data-processing.
 
@@ -29,17 +29,17 @@ requirements
 ------------
 
 For the virtual machine way:
-VirtualBox (https://www.virtualbox.org/)
-Vagrant (http://www.vagrantup.com/)
+- VirtualBox (https://www.virtualbox.org/)
+- Vagrant (http://www.vagrantup.com/)
 
 OR - For the manual method:
-Python 1.5
-Sqlite3
-The Python GDAL bindings (http://pypi.python.org/pypi/GDAL/)
+- Python 1.5
+- Sqlite3
+- The Python GDAL bindings (http://pypi.python.org/pypi/GDAL/)
 
 Either way, you'll need:
-Processing (http://processing.org/)
-Lots and lots of memory and drive space if you want to render the whole map, less for only pieces. I only rendered up to mid-level resolution, and that took 30GB of virtual memory and 30GB of drive space.
+- Processing (http://processing.org/)
+- Lots and lots of memory and drive space if you want to render the whole map, less for only pieces. I only rendered up to mid-level resolution, and that took 30GB of virtual memory and 30GB of drive space.
 
 setup
 -----
@@ -47,14 +47,14 @@ setup
 Install the applications required above, depending on your method of choice.
 
 Clone this repo in the directory of your choice:
-    git clone git://github.com/meetar/dotmap.git
+> git clone git://github.com/meetar/dotmap.git
 A directory called "dotmap" will be created.
 
 For the virtual machine way:
 Go to the dotmap directory
-	cd dotmap
+>	`cd dotmap`
 Start the VM
-	vagrant up
+	`vagrant up`
 ...that takes a few minutes on my machine. Then:
 Connect to the VM with ssh, either with an app like PuTTY or through the command line:
   ssh 127.0.0.1:8888
