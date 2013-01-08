@@ -29,7 +29,7 @@ Using the VM, which automatically installs everything except Processing:
 - Vagrant (<http://www.vagrantup.com/>)
 
 For the manual method:
-- Python 1.5
+- Python 2.7
 - Sqlite3
 - The Python GDAL bindings (<http://pypi.python.org/pypi/GDAL/>)
 - Other libraries depending on your machine's configuration.
