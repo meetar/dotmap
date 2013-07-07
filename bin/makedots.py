@@ -170,6 +170,8 @@ def main(input_filename, output_filename):
 			quadkey = merc.QuadTree( tx, ty, 21 )
 
 			c.execute( "insert into people values (?,?,?)", (x, y, quadkey) )
+	
+	conn.commit()
 	print "Finished processing %s"%output_filename
 
 if __name__=='__main__':
