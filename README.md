@@ -75,7 +75,7 @@ A preferences file "bin/states" contains a list of the states and their associat
 Then, go to the binaries dir and run makedots.py:
 
     cd bin
-    python makedots
+    python makedots.py
 This will ask your permission to do a few things, in sequence:
  - Download and process the data for each state listed in "states", making a lot of .db files
  - Run 'bash makecsv.sh' to extract all the data from the .db files into a lot of .csv files
