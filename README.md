@@ -57,9 +57,9 @@ Go to the dotmap directory and start the VM:
 
 Connect to the VM with ssh, either with an app like PuTTY or through the command line:
 
-    ssh 127.0.0.1:8888
-    user: vagrant
+    ssh vagrant@127.0.0.1 -p 2222
     password: vagrant
+    
 Then change to the shared directory in the VM, which is the same as your local project directory:
 
     cd /vagrant
