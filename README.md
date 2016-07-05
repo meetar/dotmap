@@ -1,10 +1,10 @@
 dotmap
 =========
 An attempt to replicate Brendan Martin-Anderson's US Census Dotmap:
-http://bmander.com/dotmap/index.html
+http://web.archive.org/web/20150515151040/http://bmander.com/dotmap/index.html
 
 The process described here is missing some pieces:
-http://bmander.com/dotmap/methods.html
+http://web.archive.org/web/20150419013313/http://bmander.com/dotmap/methods.html
 
 So I filled in some gaps and collected the files here. Additionally, getting all the python libraries can be tricky sometimes, so this repo includes a virtual machine (VM), which is like a cleanroom work environment in which to run the code.
 
