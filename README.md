@@ -101,4 +101,4 @@ When you're done with your virtual machine, be sure to turn it off by running `v
 
 Good luck!  
 <http://twitter.com/meetar>  
-<m33tar@gmail.com>
+<pxrich@gmail.com>
